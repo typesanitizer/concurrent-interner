@@ -1,0 +1,38 @@
+[package]
+name = "concurrent-interner"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.56.1"
+
+[lib]
+path = "src/concurrent_interner.rs"
+
+[dependencies]
+dashmap = "4.0"
+typed-arena = { version = "2", optional = true }
+
+[dev-dependencies]
+rustc-hash = "1.1.0"
+typed-arena = "2"
+ahash = "0.7.4"
+criterion = "0.3"
+walkdir = "2.3.2"
+crossbeam = "0.8"
+quickcheck = { version = "1.0.3", default-features = false }
+
+[features]
+# Features are turned off by default
+# default = []
+
+# It is convenient to put the serial interner into the crate
+# so that it can be used by both tests and benchmarks.
+# It is not meant for external use.
+#
+# Not using the 'dep:' syntax for the feature because that is
+# only available with rust >= 1.60 (Apr 2022).
+_serial = ["typed-arena"]
+
+[[bench]]
+name = "interner-speed"
+harness = false
+path = "benchmarks/interner-speed.rs"

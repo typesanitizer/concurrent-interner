@@ -14,8 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Check notes
+        run: ./dev/check-notes.py
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run: cargo build --release --all-features
+      - name: Check that benchmarks compile
+        run: cargo build --benches --all-features
+      - name: Run tests in debug mode
+        run: cargo test
+      - name: Run tests with optimizations
+        run: cargo test --release
       # MIRI testing is too slow to be running in CI. 😔

@@ -1,8 +1,11 @@
 # concurrent-interner: Conveniently interning strings from multiple threads
 
-**At the moment, this crate should not be used for serious work.
-I am looking for someone experienced with unsafe Rust to
-audit the unsafe code first.**
+**Request for help**:
+I am looking for someone experienced with unsafe Rust
+to audit the unsafe code.
+It is MIRI clean as far as I can tell,
+but MIRI take a very long time to run,
+making it unsuitable for CI.
 
 This crate provides an string interner
 which is safe to use from multiple threads.

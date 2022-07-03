@@ -1,5 +1,10 @@
 # concurrent-interner: Conveniently interning strings from multiple threads
 
+[![Build status](https://github.com/typesanitizer/concurrent-interner/actions/workflows/ci.yml/badge.svg)](https://github.com/typesanitizer/concurrent-interner/actions)
+[![crates.io](https://img.shields.io/crates/v/concurrent-interner.svg)](https://crates.io/crates/concurrent-interner)
+[![docs.rs](https://img.shields.io/docsrs/concurrent-interner/0.1.0)](https://docs.rs/concurrent-interner/0.1.0/concurrent_interner/)
+[![Rust](https://img.shields.io/badge/rust-1.56.1%2B-blue.svg?maxAge=3600)](https://github.com/typesanitizer/concurrent-interner/blob/main/Cargo.toml#L5)
+
 **Request for help**:
 I am looking for someone experienced with unsafe Rust
 to audit the unsafe code.

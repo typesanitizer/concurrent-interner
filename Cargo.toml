@@ -3,6 +3,8 @@ name = "concurrent-interner"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.56.1"
+license = "MPL-2.0"
+description = "A string interner usable from multiple threads."
 
 [lib]
 path = "src/concurrent_interner.rs"

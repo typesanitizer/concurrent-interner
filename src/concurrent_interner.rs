@@ -413,7 +413,7 @@ impl ConcurrentInternerMemberStorage {
 
     // Might as well save 24 bytes elsewhere as well. 🤷🏽
     #[cfg(not(all(target_arch = "aarch64", any(target_os = "macos", target_os = "ios"))))]
-    const STORAGE_CHUNK_SIZE: usize = 4192 - 24;
+    const STORAGE_CHUNK_SIZE: usize = 4096 - 24;
 
     const CHUNK_SLICE_ERROR_MSG: &'static str = "Trying to slice chunk with out-of-bounds indices.";
 }

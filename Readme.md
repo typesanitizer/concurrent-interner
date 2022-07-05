@@ -9,7 +9,8 @@
 I am looking for someone experienced with unsafe Rust
 to audit the unsafe code.
 It is MIRI clean as far as I can tell,
-but MIRI take a very long time to run,
+but MIRI takes a very long time to run
+(30~45 min on an M1 Macbook Pro),
 making it unsuitable for CI.
 
 This crate provides an string interner

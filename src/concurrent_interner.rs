@@ -599,9 +599,9 @@ impl CompositeIndex {
         debug_assert!(index <= u32::MAX as usize);
         CompositeIndex {
             arena_local_index: ArenaLocalIndex::new_huge_index(index as u32),
-            chunk_start_offset: u16::max_value(),
-            len: u16::max_value(),
-        } // Usage of u16::max_value() will trigger a panic on index confusion.
+            chunk_start_offset: u16::MAX,
+            len: u16::MAX,
+        } // Usage of u16::MAX will trigger a panic on index confusion.
     }
 
     #[inline]
@@ -813,7 +813,7 @@ struct ByteSlice {
 // Constants
 
 impl ByteSlice {
-    const MAX_LEN: usize = usize::max_value() >> 8;
+    const MAX_LEN: usize = usize::MAX >> 8;
     const SIZE_IN_BYTES: usize = std::mem::size_of::<Self>();
 }
 
